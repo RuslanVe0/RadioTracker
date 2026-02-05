@@ -26,3 +26,7 @@ It is designed to be simple, efficient, and easy to use.
 1. **Download the repository**
 2. ```bash
    git clone https://github.com/RuslanVe0/RadioTracker.git
+
+## Usage
+(example)
+python main.py -m -s=radioenergy
