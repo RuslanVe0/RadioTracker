@@ -24,4 +24,6 @@ It is designed to be simple, efficient, and easy to use.
 ## 🚀 Installation
 
 1. **Download the repository**
-   git clone [<repository-url>](https://github.com/RuslanVe0/RadioTracker.git)
+2. ```bash
+   git clone (https://github.com/RuslanVe0/RadioTracker.git
+```
