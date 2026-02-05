@@ -25,5 +25,4 @@ It is designed to be simple, efficient, and easy to use.
 
 1. **Download the repository**
 2. ```bash
-   git clone (https://github.com/RuslanVe0/RadioTracker.git
-```
+   git clone https://github.com/RuslanVe0/RadioTracker.git
