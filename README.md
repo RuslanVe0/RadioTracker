@@ -1,66 +1,28 @@
-RadioTracker
+# 🎵 RadioTracker
 
-RadioTracker is a lightweight tool for downloading music from various online radio sources, such as Radio Energy (BG).
-Its goal is to make recording and saving radio streams simple and accessible.
+**RadioTracker** is a lightweight tool for downloading music from various online radio sources, such as **Radio Energy (BG)**.  
+It is designed to be simple, efficient, and easy to use.
 
-Features
+---
 
-Download music from supported radio stations
+## ✨ Features
 
-Simple and easy-to-use workflow
+- Download music from online radio streams
+- Supports Radio Energy (BG)
+- Uses FFmpeg for audio processing
+- Simple setup and usage
 
-Uses ffmpeg for reliable audio processing
+---
 
-Requirements
+## 📦 Requirements
 
-Before using RadioTracker, make sure you have the following installed:
+- **FFmpeg** (required)
+- Git (optional, for cloning the repository)
 
-Git (optional, for cloning the repository)
+---
 
-FFmpeg (required)
+## 🚀 Installation
 
-Installation
-
-Download the repository
-
-Clone it using Git:
-
-git clone <repository-url>
-
-
-Or download it as a ZIP and extract it.
-
-Install FFmpeg
-
-Download FFmpeg from the official website:
-https://ffmpeg.org/download.html
-
-Make sure ffmpeg is added to your system PATH.
-
-Verify FFmpeg installation
-
-ffmpeg -version
-
-
-If installed correctly, version information will be displayed.
-
-Usage
-
-Navigate to the project directory:
-
-cd RadioTracker
-
-
-Run the application according to the provided script or configuration (details depend on implementation).
-
-Supported Sources
-
-Radio Energy (BG)
-
-More sources can be added in the future
-
-Notes
-
-The quality of the downloaded audio depends on the source stream.
-
-Continuous recording may result in large files—monitor disk usage.
+1. **Download the repository**
+   ```bash
+   git clone <repository-url>
