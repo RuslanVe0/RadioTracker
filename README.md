@@ -30,3 +30,9 @@ It is designed to be simple, efficient, and easy to use.
 ## Usage
 (example)
 python main.py -m -s=radioenergy
+
+### Notes
+- You should create a database file using DB Browser (sqlite), you can download it from here - https://sqlitebrowser.org/dl/.
+- Important libraries which must be installed:
+- python-vlc, mutagen.
+They can be found in requirements.txt
