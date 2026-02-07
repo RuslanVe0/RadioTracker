@@ -4,6 +4,9 @@ import os
 import RadioTracker
 import utils.utils
 import uuid
+import database_controller
+import terminal as _terminal
+
 
 class constructor():
     """
@@ -21,7 +24,8 @@ class constructor():
     start_time: str = utils.utils.get_current_time()
     finished: bool = False
 
-def write_song(sample: bytes, _constructor: constructor):
+def write_song(sample: bytes, _constructor: constructor, verbosity: bool):
+    Controller: database_controller.Controller = database_controller.Controller()
     """
     The purpose of this method is to write locally the downloaded data from the given source (server destination).
     The data that is written is audio sample, not the full song. It is written in the 'audiosamples/' directory.
@@ -41,20 +45,26 @@ def write_song(sample: bytes, _constructor: constructor):
         file.write(sample)
     file.close()
     utils.utils.convert_file_to_mp3(path)
-    print("[+] Downloading completed!")
+    if verbosity:
+        print("[+] Downloading completed!")
+    Controller.modify("song_location", path, _constructor.current_song)
     
 @utils.utils.threaded
-def sample_audio(tracker: RadioTracker, _constructor) -> None:
+def sample_audio(tracker: RadioTracker, _constructor, verbosity: bool) -> None:
     sample: bytes = tracker.audio_sample(_constructor)
     if not sample:
         return
-    write_song(sample, _constructor)
+    write_song(sample, _constructor, verbosity)
 
 @utils.utils.threaded
-def full_audio(tracker: RadioTracker, _constructor) -> None:
+def full_audio(tracker: RadioTracker, _constructor, verbosity: bool) -> None:
+    Controller: database_controller.Controller = database_controller.Controller()
     _constructor.finished = False
-    tracker.music_stream(_constructor, open(f"music_downloader/{_constructor.current_artist}_{_constructor.current_song}_full_audio.acc", "wb"), f"music_downloader/{_constructor.current_artist}_{_constructor.current_song}_full_audio.acc", "RADIO_ENERGY")
-
+    location: str = f"music_downloader/{_constructor.current_artist}_{_constructor.current_song}_full_audio.acc"
+    if verbosity:
+        print("[+] Data uploaded in DB, modified time.")
+    Controller.modify("song_location", location, _constructor.current_song)
+    tracker.music_stream(_constructor, open(location, "wb"), f"music_downloader/{_constructor.current_artist}_{_constructor.current_song}_full_audio.acc", "RADIO_ENERGY", verbosity)
 
 def banner():
     print("""⠀⠀⠀⠀
@@ -77,41 +87,62 @@ def banner():
                                                                       
 """)
 
-def capture(source: str = "radioenergy", download_music: bool = False):
+def db_controller(_constructor: constructor, source: str):
+    Controller: database_controller.Controller = database_controller.Controller()
+    if Controller.find("song", _constructor.current_song):
+        Controller.modify("last_played", utils.utils.get_current_time(), _constructor.current_song)
+    else:
+        Controller.add_artist_song_new(_constructor.current_song, _constructor.current_artist, utils.utils.get_current_time(), utils.utils.get_current_time(),
+        "/", source)
+    
+    
+
+def capture(source: str = "radioenergy", download_music: bool = False, verbosity: bool = False, terminal: bool = False):
     if source not in ["radioenergy"]:
         raise ValueError("Source has one of these (radioenergy,)")
     banner()
     recorded: list[list] = []
     radiotracker: RadioTracker = RadioTracker.RadioTracker(type_of = f"?radio={source}")
     _constructor: constructor = constructor()
+    if terminal:
+        threading.Thread(target = _terminal.terminal_init, args = (_constructor,), kwargs = None).start()
     radiotracker.capture()
     _constructor.current_song = radiotracker.constructor.json_data["current_song"]
     _constructor.current_artist = radiotracker.constructor.json_data["current_artist"]
-    print(f"Current artist: {_constructor.current_artist}\r\x0ACurrent song: ♪ {_constructor.current_song} ♪\r\x0AStart time: {_constructor.start_time}\r\x0ASource: {source}\r\x0A")
+    if not terminal:
+        print(f"Current artist: {_constructor.current_artist}\r\x0ACurrent song: ♪ {_constructor.current_song} ♪\r\x0AStart time: {_constructor.start_time}\r\x0ASource: {source}\r\x0A")
     recorded.append([_constructor.current_song, _constructor.current_artist, _constructor.start_time])
+    db_controller(_constructor, source)
     if not download_music and download_music != "no_download":
-        threading.Thread(target = sample_audio, args = (radiotracker, _constructor)).start()
-        print("[*] Downloading sample...")
+        threading.Thread(target = sample_audio, args = (radiotracker, _constructor, verbosity)).start()
+        if verbosity:
+            print("[*] Downloading sample...")
     elif download_music and download_music != "no_download":
-        threading.Thread(target = full_audio, args = (radiotracker, _constructor)).start()
-        print("[*] Downloading full audio...")
+        threading.Thread(target = full_audio, args = (radiotracker, _constructor, verbosity)).start()
+        if verbosity:
+            print("[*] Downloading full audio...")
     try:        
         while True:
             radiotracker.capture()
             data: dict = radiotracker.constructor.json_data
             if data["current_artist"] != _constructor.current_artist and data["current_song"] != _constructor.current_song:
-                os.system("cls"); banner()
+                if not terminal:
+                    os.system("cls"); banner()
                 recorded.append([_constructor.current_song, _constructor.current_artist, _constructor.start_time])
                 _constructor.current_song = data["current_song"]
                 _constructor.current_artist = data["current_artist"]
                 _constructor.start_time = utils.utils.get_current_time()
-                print(f"Current artist: {_constructor.current_artist}\r\x0ACurrent song: ♪ {_constructor.current_song} ♪\r\x0AStart time: {_constructor.start_time}\r\x0ASource: {source}\r\x0A")
+                db_controller(_constructor, source)
+                if not terminal:
+                    print(f"Current artist: {_constructor.current_artist}\r\x0ACurrent song: ♪ {_constructor.current_song} ♪\r\x0AStart time: {_constructor.start_time}\r\x0ASource: {source}\r\x0A")
                 if not download_music:
                     sample_audio(radiotracker, _constructor)
-                    print("[*] Downloading sample...")
+                    if not terminal:
+                        print("[*] Downloading sample...")
                 else:
-                    full_audio(radiotracker, _constructor)
-                    print("[*] Downloading full audio...")
+                    full_audio(radiotracker, _constructor, verbosity)
+                    if not terminal:
+                        print("[*] Downloading full audio...")
             if len(recorded) >= 1:
                 with open("recorded.txt", "a", encoding = "utf-8", errors = "ignore") as file:
                     for current_song, current_artist, start_time in recorded:

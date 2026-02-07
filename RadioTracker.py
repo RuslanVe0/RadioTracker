@@ -30,7 +30,7 @@ class RadioTracker(object):
         received: bytes = httplib_object.create_request_file(constructor)
         return received
     
-    def music_stream(self, constructor, writing_pipe, path, type_of: str = "RADIO_ENERGY"):
+    def music_stream(self, constructor, writing_pipe, path, type_of: str = "RADIO_ENERGY", verbosity: bool = False):
         httplib_object: httplib.httplib = httplib.httplib(f"23543.live.streamtheworld.com", f"{type_of}AAC_L.aac", 443)
-        httplib_object.create_request_stream(constructor, writing_pipe, path)
+        httplib_object.create_request_stream(constructor, writing_pipe, path, verbosity)
         
