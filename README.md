@@ -35,4 +35,5 @@ python main.py -m -s=radioenergy
 - You should create a database file using DB Browser (sqlite), you can download it from here - https://sqlitebrowser.org/dl/.
 - Important libraries which must be installed:
 - python-vlc, mutagen.
+- Also it is recommended and required to install ffmpeg. You can download it from here - https://github.com/BtbN/FFmpeg-Builds/releases.
 They can be found in requirements.txt
