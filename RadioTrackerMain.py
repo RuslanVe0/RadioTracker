@@ -94,7 +94,17 @@ def db_controller(_constructor: constructor, source: str):
     else:
         Controller.add_artist_song_new(_constructor.current_song, _constructor.current_artist, utils.utils.get_current_time(), utils.utils.get_current_time(),
         "/", source)
-    
+
+@utils.utils.threaded
+def update_all():
+    # updates per 5-seconds.
+    db_controller: database_controller.Controller = database_controller.Controller()
+    while True:
+        for elements in db_controller.fetch_all():
+            location, _time = elements[5], elements[8]
+            total_time = utils.utils.calculate_length(utils.utils.read_file(location).length, 0.192)
+            db_controller.modify("time", total_time, elements[1])
+        time.sleep(5)
     
 
 def capture(source: str = "radioenergy", download_music: bool = False, verbosity: bool = False, terminal: bool = False):
@@ -121,6 +131,7 @@ def capture(source: str = "radioenergy", download_music: bool = False, verbosity
         threading.Thread(target = full_audio, args = (radiotracker, _constructor, verbosity)).start()
         if verbosity:
             print("[*] Downloading full audio...")
+    update_all()
     try:        
         while True:
             radiotracker.capture()

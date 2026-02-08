@@ -2,12 +2,14 @@ import vlc
 import os
 import database_controller
 import utils.utils
-import mutagen.mp3
+import time
+
 
 class constructor():
 
     song_is_playing: bool = False
     player_module: vlc.MediaPlayer = None
+    has_finished: bool = False
     
 
 global_constr = constructor()
@@ -50,12 +52,14 @@ def fetch_all(constructor, args):
     for elements in records:
         index, song, artist, date_added, last_time_played, location, source, minihash, time = elements
         location = DBController.findr("mini_hash", minihash)[0][5]
-        total_time = utils.utils.calculate_length(os.path.getsize(location), 0.192)
-        table += (
+        if not os.path.exists(location):
+            print("Song not found.")
+        else:
+            table += (
             f"\n| {index:^4} | {song[:20]:<20} | {artist[:20]:<20} | "
             f"{date_added:^12} | {last_time_played:^15} | "
             f"{location[:27]+"...":<30} | {source[:11]:<30} |"
-            f"{minihash:^20} | {total_time:^10} |"
+            f"{minihash:^20} | {time:^10} |"
         )
 
     print(table, end = "\n\n\n")
@@ -68,7 +72,6 @@ def delete_all(constructor, args):
     DBController.delete_all()
     print("Successfully deleted all records.")
 
-@utils.utils.threaded
 
 @utils.utils.threaded
 def play_song(constructor, args):
@@ -76,10 +79,23 @@ def play_song(constructor, args):
         print("Another song is currently playing.")
         return
     DBController: database_controller = database_controller.Controller()
+    seconds: int = 0
+    data = None
     if not args:
         print("No song has been specified.")
         return
-    data = DBController.findr("mini_hash", args)
+    if "," in args:
+        if len(args.split(",")) < 2:
+            print("The format must be - song,seconds.")
+            return
+        try:
+            seconds = int(args.split(",")[1])
+        except ValueError:
+            print("Expected an integer.")
+        song = args.split(",")[0]
+    else:
+        song = args
+    data = DBController.findr("mini_hash", song)
     if not data:
         print("Song not found.")
         return
@@ -92,10 +108,16 @@ def play_song(constructor, args):
         on_stop
     )
     player.play()
-    
+    if seconds:
+        counter: int = 0
+        while counter < seconds:
+            counter += 1
+            time.sleep(1)
+        stop_song(None, "")
+        return
 
 def on_stop(event):
-    global_constr.song_is_play = False
+    global_constr.song_is_playing = False
     global_constr.player_module.stop()
     global_constr.player_module = None
 
@@ -106,6 +128,51 @@ def stop_song(constructor, args):
         global_constr.player_module.stop()
     else:
         print("No song is currently played.")
+
+def find_requested_minihash(constructor, args):
+    DBController: database_controller.Controller = database_controller.Controller()
+    if not args:
+        print("No arguments specified. Mini_hash is required.")
+        return
+    mini_hash = args
+    data = DBController.findr("mini_hash", mini_hash)
+    if not data:
+        print("No data has been found.")
+        return
+    data = data[0]
+    total_time = utils.utils.calculate_length(utils.utils.read_file(data[5]).length, 0.192)
+    datac: str = f"[{data[0]}]\r\x0AArtist: {data[1]}\r\x0ASong: {data[2]}\r\x0ADate added: {data[3]}\r\x0ALast-played: {data[4]}\r\x0A\r\x0ALocation: {data[5]}\r\x0ATime: {total_time}\r\x0A"
+    print(datac)
+
+@utils.utils.threaded
+def count_time(seconds: int, mini_hash: str, song: str, artist: str, full: list) -> None:
+    global_constr.has_finished = False
+    counter: int = 0
+    play_song(constructor, mini_hash)
+    while counter != seconds:
+        print(f"{artist} - {song}\r\x0AMore information: \r\x0A\
+Date added: {full[3]}\r\x0ALast played: {full[4]}\r\x0ALocation: {full[5]}\r\x0AMini-hash: {mini_hash}\r\x0A\r\x0ACompleted: {(counter/seconds)*100}%/{100}% [{counter}/{seconds}]\r\x0A")
+        counter += 1
+        time.sleep(1)
+        os.system("cls")
+    if global_constr.song_is_playing:
+        stop_song(None, "")
+    global_constr.has_finished = True
+
+def play_all(constructor, args):
+    DBController: database_controller.Controller = database_controller.Controller()
+    seconds: int = 5
+    if args:
+        try:
+            seconds = int(args)
+        except ValueError:
+            print("Expected an integer.")
+    global_constr.has_finished = False
+    for elements in DBController.fetch_all():
+        mini_hash = elements[7]
+        count_time(seconds, mini_hash, elements[1], elements[2], elements)
+        while not global_constr.has_finished:
+            pass
     
 
 commands: dict = {"current_artist": {"method": current_artist, "description": "Outputs the current played artist."}, 
@@ -119,7 +186,9 @@ commands: dict = {"current_artist": {"method": current_artist, "description": "O
                 "clear": {"method": clear_screen, "description": "Clears the screen."},
                 "delete_all": {"method": delete_all, "description": "Deletes all records."},
                 "play": {"method": play_song, "description": "Play a given downloaded song."},
-                "stop": {"method": stop_song, "description": "Stop the song that is playing."}}
+                "stop": {"method": stop_song, "description": "Stop the song that is playing."},
+                "find": {"method": find_requested_minihash, "description": "Outputs all information regarding the specified song. (Only mini_hash is accepted)."},
+                "playall": {"method": play_all, "description": "Plays all songs sequentially, each song is partitioned per 5-seconds. You have control over time."}}
 
 
 
@@ -139,7 +208,19 @@ class Terminal(object):
                 args = None
                 command = input("#> ").strip()
                 if command == "help" or command == "?":
-                    print("\n\n".join(("  * " + elements + f"\n   - {commands[elements]["description"]}") for elements in commands))
+                    tables: str = "\n\n"
+                    count: int = 0
+                    for elements in commands:
+                        if count != 4:
+                            tables += elements + " | "
+                        else:
+                            tables += elements + " |\n"
+                            count = 0
+                        count += 1
+                    tables += "\n\n"
+                    for elements in commands:
+                        tables += f" * {elements} - " + commands[elements]["description"] + "\n"
+                    print(tables)
                     continue
                 elif "=" in command:
                     if len(command.split("=")) > 1:

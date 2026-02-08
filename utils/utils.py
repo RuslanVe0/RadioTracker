@@ -40,3 +40,36 @@ def threaded(function):
 def convert_file_to_mp3(path: str) -> None:
     subprocess.run(["ffmpeg/ffmpeg.exe", "-y", "-i", path, path.replace(".acc", ".mp3")], stdout = subprocess.DEVNULL, stderr = subprocess.DEVNULL, check = True)
     os.remove(path)
+    
+    
+def calculate_length(size: int, bitrate: float) -> str:
+    total_mbbits = (size * 8)/1_000_000
+    total_seconds = total_mbbits / bitrate
+    minutes = int(total_seconds // 60)
+    seconds = int(total_seconds % 60)
+    if seconds < 10:
+        seconds = f"0{seconds}"
+    return f"{minutes}:{seconds}"
+
+
+
+class read_file(object):
+    
+    length: int = 0
+    location: str = ""
+    
+    def __init__(self, location: str):
+        self.location = location
+        self.data: bytes = b""
+        self.read()
+        
+    def __repr__(self):
+        return f"<read_file location={self.location}>"
+
+    def read(self):
+        try:
+            pipe = open(self.location, "rb").read()
+        except FileNotFoundError:
+            print("Requested file was not found.")
+        self.data = pipe
+        self.length = len(pipe)
