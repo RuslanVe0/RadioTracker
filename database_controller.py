@@ -20,7 +20,7 @@ class Controller():
     def add_artist_song_new(self, song_name: str, artist: str, added: str, last_played: str, song_location: str, source: str):
         mini_hash = hashlib.sha256(str(uuid.uuid4()).encode("utf-8", errors="ignore")).hexdigest()[:-59]
         self.cur.execute(f'INSERT INTO MusicData(song, artist, added,\
-        last_played, song_location, source, mini_hash) VALUES ("{song_name}", "{artist}","{added}","{last_played}", "{song_location}", "{source}", "{mini_hash}")')
+        last_played, song_location, source, mini_hash, time) VALUES ("{song_name}", "{artist}","{added}","{last_played}", "{song_location}", "{source}", "{mini_hash}", "n/a")')
         self.connector.commit()
     
     def find(self, column: str, value: str):

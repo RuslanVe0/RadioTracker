@@ -67,9 +67,11 @@ class read_file(object):
         return f"<read_file location={self.location}>"
 
     def read(self):
+        if self.location == "/": return
         try:
-            pipe = open(self.location, "rb").read()
+            pipe = open(os.getcwd() + "\\" + self.location, "rb").read()
         except FileNotFoundError:
             print("Requested file was not found.")
+            return
         self.data = pipe
         self.length = len(pipe)

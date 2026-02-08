@@ -50,7 +50,7 @@ def fetch_all(constructor, args):
 
     table = header + "\n" + separator
     for elements in records:
-        index, song, artist, date_added, last_time_played, location, source, minihash, time = elements
+        index, song, artist, date_added, last_time_played, location, source, minihash, time, _type = elements
         location = DBController.findr("mini_hash", minihash)[0][5]
         if not os.path.exists(location):
             print("Song not found.")
@@ -145,13 +145,14 @@ def find_requested_minihash(constructor, args):
     print(datac)
 
 @utils.utils.threaded
-def count_time(seconds: int, mini_hash: str, song: str, artist: str, full: list) -> None:
+def count_time(seconds: int, mini_hash: str, song: str, artist: str, full: list, percentage_done: float) -> None:
     global_constr.has_finished = False
     counter: int = 0
     play_song(constructor, mini_hash)
     while counter != seconds:
-        print(f"{artist} - {song}\r\x0AMore information: \r\x0A\
-Date added: {full[3]}\r\x0ALast played: {full[4]}\r\x0ALocation: {full[5]}\r\x0AMini-hash: {mini_hash}\r\x0A\r\x0ACompleted: {(counter/seconds)*100}%/{100}% [{counter}/{seconds}]\r\x0A")
+        print(f"Song: {artist} - {song}\r\x0AMore information: \r\x0A\
+ Date added: {full[3]}\r\x0A Last played: {full[4]}\r\x0A Location: {full[5]}\r\x0A Mini-hash: {mini_hash}\r\x0A\r\x0ACompleted: {(counter/seconds)*100}%/{100}% [{counter}/{seconds}]\r\x0A\
+Overall completion: {int(percentage_done)}/100%\r\x0A")
         counter += 1
         time.sleep(1)
         os.system("cls")
@@ -162,17 +163,32 @@ Date added: {full[3]}\r\x0ALast played: {full[4]}\r\x0ALocation: {full[5]}\r\x0A
 def play_all(constructor, args):
     DBController: database_controller.Controller = database_controller.Controller()
     seconds: int = 5
+    total: int = 0
     if args:
         try:
-            seconds = int(args)
-        except ValueError:
+            seconds = int(args.split(",")[0])
+        except TypeError:
             print("Expected an integer.")
+            return
+    if args and "," in args:
+        try:
+            total = int(args.split(",")[1])
+        except TypeError:
+            print("Expected an integer.")
+            return
     global_constr.has_finished = False
-    for elements in DBController.fetch_all():
+    counter: int = 0
+    fetched = DBController.fetch_all()
+    size: int = len(fetched) if not total else total
+    for elements in fetched:
+        if counter == total:
+            print("Reached max playable songs.")
+            return
         mini_hash = elements[7]
-        count_time(seconds, mini_hash, elements[1], elements[2], elements)
+        count_time(seconds, mini_hash, elements[1], elements[2], elements, (counter/size) * 100)
         while not global_constr.has_finished:
             pass
+        counter += 1
     
 
 commands: dict = {"current_artist": {"method": current_artist, "description": "Outputs the current played artist."}, 
@@ -222,6 +238,9 @@ class Terminal(object):
                         tables += f" * {elements} - " + commands[elements]["description"] + "\n"
                     print(tables)
                     continue
+                elif command == "exit":
+                    self.constructor.terminal = False
+                    return
                 elif "=" in command:
                     if len(command.split("=")) > 1:
                         command, args = command.split("=")
@@ -234,6 +253,8 @@ class Terminal(object):
                 
         except EOFError:
             print("[-] Keyboard interrupt. Exitting.")
+            self.constructor.running = False
+            return
     
     
 def terminal_init(constructor):

@@ -23,6 +23,11 @@ class constructor():
     
     start_time: str = utils.utils.get_current_time()
     finished: bool = False
+    
+    terminal: bool = False
+    running: bool = True
+    
+_constructor: constructor = constructor()
 
 def write_song(sample: bytes, _constructor: constructor, verbosity: bool):
     Controller: database_controller.Controller = database_controller.Controller()
@@ -44,10 +49,10 @@ def write_song(sample: bytes, _constructor: constructor, verbosity: bool):
     with open(path, "wb") as file:
         file.write(sample)
     file.close()
+    Controller.modify("song_location", path.replace(".acc", ".mp3"), _constructor.current_song)
     utils.utils.convert_file_to_mp3(path)
     if verbosity:
         print("[+] Downloading completed!")
-    Controller.modify("song_location", path, _constructor.current_song)
     
 @utils.utils.threaded
 def sample_audio(tracker: RadioTracker, _constructor, verbosity: bool) -> None:
@@ -100,6 +105,8 @@ def update_all():
     # updates per 5-seconds.
     db_controller: database_controller.Controller = database_controller.Controller()
     while True:
+        if not _constructor.running:
+            return
         for elements in db_controller.fetch_all():
             location, _time = elements[5], elements[8]
             total_time = utils.utils.calculate_length(utils.utils.read_file(location).length, 0.192)
@@ -113,8 +120,8 @@ def capture(source: str = "radioenergy", download_music: bool = False, verbosity
     banner()
     recorded: list[list] = []
     radiotracker: RadioTracker = RadioTracker.RadioTracker(type_of = f"?radio={source}")
-    _constructor: constructor = constructor()
     if terminal:
+        _constructor.terminal = True
         threading.Thread(target = _terminal.terminal_init, args = (_constructor,), kwargs = None).start()
     radiotracker.capture()
     _constructor.current_song = radiotracker.constructor.json_data["current_song"]
@@ -137,18 +144,18 @@ def capture(source: str = "radioenergy", download_music: bool = False, verbosity
             radiotracker.capture()
             data: dict = radiotracker.constructor.json_data
             if data["current_artist"] != _constructor.current_artist and data["current_song"] != _constructor.current_song:
-                if not terminal:
+                if not _constructor.terminal:
                     os.system("cls"); banner()
                 recorded.append([_constructor.current_song, _constructor.current_artist, _constructor.start_time])
                 _constructor.current_song = data["current_song"]
                 _constructor.current_artist = data["current_artist"]
                 _constructor.start_time = utils.utils.get_current_time()
                 db_controller(_constructor, source)
-                if not terminal:
+                if not _constructor.terminal:
                     print(f"Current artist: {_constructor.current_artist}\r\x0ACurrent song: ♪ {_constructor.current_song} ♪\r\x0AStart time: {_constructor.start_time}\r\x0ASource: {source}\r\x0A")
                 if not download_music:
-                    sample_audio(radiotracker, _constructor)
-                    if not terminal:
+                    sample_audio(radiotracker, _constructor, verbosity)
+                    if not _constructor.terminal:
                         print("[*] Downloading sample...")
                 else:
                     full_audio(radiotracker, _constructor, verbosity)
@@ -165,5 +172,5 @@ def capture(source: str = "radioenergy", download_music: bool = False, verbosity
     except KeyboardInterrupt:
         _constructor.current_artist = ""
         _constructor.current_song = ""
-        del _constructor
+        _constructor.running = False
         exit("Exitting...")

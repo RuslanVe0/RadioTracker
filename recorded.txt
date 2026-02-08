@@ -388,3 +388,508 @@ Current artist: HELENA PAPARIZOU
 Start time: 2026 Mar 08 Sun 06:24:50
 Location: audiosamples/HELENA PAPARIZOU_Kalinixta_sample.acc
 
+Current song: Casablanca
+Current artist: JESSICA JAY
+Start time: 2026 Mar 08 Sun 06:25:51
+Location: audiosamples/JESSICA JAY_Casablanca_sample.acc
+
+Current song: Rampampam
+Current artist: MINELLI
+Start time: 2026 Mar 08 Sun 06:28:53
+Location: audiosamples/MINELLI_Rampampam_sample.acc
+
+Current song: The Sign
+Current artist: ACE OF BASE
+Start time: 2026 Mar 08 Sun 06:31:33
+Location: audiosamples/ACE OF BASE_The Sign_sample.acc
+
+Current song: Nostalgia
+Current artist: ELIZABET
+Start time: 2026 Mar 08 Sun 06:34:35
+Location: audiosamples/ELIZABET_Nostalgia_sample.acc
+
+Current song: I Like It
+Current artist: NARCOTIC THRUST
+Start time: 2026 Mar 08 Sun 06:37:16
+Location: audiosamples/NARCOTIC THRUST_I Like It_sample.acc
+
+Current song: Give In To Me
+Current artist: MICHAEL JACKSON
+Start time: 2026 Mar 08 Sun 06:40:40
+Location: audiosamples/MICHAEL JACKSON_Give In To Me_sample.acc
+
+Current song: Give In To Me
+Current artist: MICHAEL JACKSON
+Start time: 2026 Mar 08 Sun 06:41:02
+Location: audiosamples/MICHAEL JACKSON_Give In To Me_sample.acc
+
+Current song: Give In To Me
+Current artist: MICHAEL JACKSON
+Start time: 2026 Mar 08 Sun 06:41:17
+Location: audiosamples/MICHAEL JACKSON_Give In To Me_sample.acc
+
+Current song: Give In To Me
+Current artist: MICHAEL JACKSON
+Start time: 2026 Mar 08 Sun 06:41:24
+Location: audiosamples/MICHAEL JACKSON_Give In To Me_sample.acc
+
+Current song: Give In To Me
+Current artist: MICHAEL JACKSON
+Start time: 2026 Mar 08 Sun 06:41:28
+Location: audiosamples/MICHAEL JACKSON_Give In To Me_sample.acc
+
+Current song: Give In To Me
+Current artist: MICHAEL JACKSON
+Start time: 2026 Mar 08 Sun 06:41:28
+Location: audiosamples/MICHAEL JACKSON_Give In To Me_sample.acc
+
+Current song: Ordinary (ENERGY Rmx)
+Current artist: ALEX WARREN
+Start time: 2026 Mar 08 Sun 06:43:31
+Location: audiosamples/ALEX WARREN_Ordinary (ENERGY Rmx)_sample.acc
+
+Current song: Mr. Saxobeat
+Current artist: ALEXANDRA STAN
+Start time: 2026 Mar 08 Sun 06:46:12
+Location: audiosamples/ALEXANDRA STAN_Mr. Saxobeat_sample.acc
+
+Current song: Shy Guy
+Current artist: DIANA KING
+Start time: 2026 Mar 08 Sun 06:49:34
+Location: audiosamples/DIANA KING_Shy Guy_sample.acc
+
+Current song: It Goes Like Nanana
+Current artist: PEGGY GOU
+Start time: 2026 Mar 08 Sun 06:52:55
+Location: audiosamples/PEGGY GOU_It Goes Like Nanana_sample.acc
+
+Current song: Say It Right
+Current artist: NELLY FURTADO
+Start time: 2026 Mar 08 Sun 06:56:36
+Location: audiosamples/NELLY FURTADO_Say It Right_sample.acc
+
+Current song: Let The Music Play
+Current artist: MUSIC INSTRUCTOR
+Start time: 2026 Mar 08 Sun 07:00:38
+Location: audiosamples/MUSIC INSTRUCTOR_Let The Music Play_sample.acc
+
+Current song: Angels (Love Is The Answer)
+Current artist: MORANDI
+Start time: 2026 Mar 08 Sun 07:04:19
+Location: audiosamples/MORANDI_Angels (Love Is The Answer)_sample.acc
+
+Current song: In My Dreams
+Current artist: PANDERA
+Start time: 2026 Mar 08 Sun 07:07:21
+Location: audiosamples/PANDERA_In My Dreams_sample.acc
+
+Current song: Sapphire
+Current artist: ED SHEERAN
+Start time: 2026 Mar 08 Sun 07:11:03
+Location: audiosamples/ED SHEERAN_Sapphire_sample.acc
+
+Current song: The Rhythm Of The Night
+Current artist: CORONA
+Start time: 2026 Mar 08 Sun 07:13:45
+Location: audiosamples/CORONA_The Rhythm Of The Night_sample.acc
+
+Current song: I Can Lose My Heart Tonight '98 (Rap Version)
+Current artist: C C CATCH FT. KRAYZEE
+Start time: 2026 Mar 08 Sun 07:17:05
+Location: audiosamples/C C CATCH FT. KRAYZEE_I Can Lose My Heart Tonight '98 (Rap Version)_sample.acc
+
+Current song: Amathole
+Current artist: JOEZI FT. LIZWI
+Start time: 2026 Mar 08 Sun 07:20:26
+Location: audiosamples/JOEZI FT. LIZWI_Amathole_sample.acc
+
+Current song: That Don't Impress Me Much
+Current artist: SHANIA TWAIN
+Start time: 2026 Mar 08 Sun 07:23:46
+Location: audiosamples/SHANIA TWAIN_That Don't Impress Me Much_sample.acc
+
+Current song: Life is Simple (Move Your Body)
+Current artist: MAESIC & MARSHALL JEFFERSON FT. SALOME DAS
+Start time: 2026 Mar 08 Sun 07:27:06
+Location: audiosamples/MAESIC & MARSHALL JEFFERSON FT. SALOME DAS_Life is Simple (Move Your Body)_sample.acc
+
+Current song: Rame
+Current artist: SNAP! FT. RUKMANI
+Start time: 2026 Mar 08 Sun 07:30:08
+Location: audiosamples/SNAP! FT. RUKMANI_Rame_sample.acc
+
+Current song: Abracadabra
+Current artist: LADY GAGA
+Start time: 2026 Mar 08 Sun 07:33:48
+Location: audiosamples/LADY GAGA_Abracadabra_sample.acc
+
+Current song: Shackles (Praise You)
+Current artist: MARY MARY
+Start time: 2026 Mar 08 Sun 07:37:09
+Location: audiosamples/MARY MARY_Shackles (Praise You)_sample.acc
+
+Current song: Bye Bye Baby
+Current artist: TQ
+Start time: 2026 Mar 08 Sun 07:40:09
+Location: audiosamples/TQ_Bye Bye Baby_sample.acc
+
+Current song: ENERGY OFFICIAL ANTHEM 2025
+Current artist: D-N-K
+Start time: 2026 Mar 08 Sun 07:43:49
+Location: audiosamples/D-N-K_ENERGY OFFICIAL ANTHEM 2025_sample.acc
+
+Current song: Bad Boys
+Current artist: INNER CIRCLE
+Start time: 2026 Mar 08 Sun 07:46:30
+Location: audiosamples/INNER CIRCLE_Bad Boys_sample.acc
+
+Current song: Chika Bomb
+Current artist: DAN BALAN FT. MARLEY WATERS
+Start time: 2026 Mar 08 Sun 07:49:50
+Location: audiosamples/DAN BALAN FT. MARLEY WATERS_Chika Bomb_sample.acc
+
+Current song: Music Sounds Better With You
+Current artist: STARDUST
+Start time: 2026 Mar 08 Sun 07:52:10
+Location: audiosamples/STARDUST_Music Sounds Better With You_sample.acc
+
+Current song: Whenever, Wherever
+Current artist: SHAKIRA
+Start time: 2026 Mar 08 Sun 07:55:31
+Location: audiosamples/SHAKIRA_Whenever, Wherever_sample.acc
+
+Current song: Please Let Me Know
+Current artist: COOL CUT
+Start time: 2026 Mar 08 Sun 07:59:31
+Location: audiosamples/COOL CUT_Please Let Me Know_sample.acc
+
+Current song: Kalinixta
+Current artist: HELENA PAPARIZOU
+Start time: 2026 Mar 08 Sun 11:19:35
+Location: audiosamples/HELENA PAPARIZOU_Kalinixta_sample.acc
+
+Current song: Kalinixta
+Current artist: HELENA PAPARIZOU
+Start time: 2026 Mar 08 Sun 11:19:35
+Location: audiosamples/HELENA PAPARIZOU_Kalinixta_sample.acc
+
+Current song: Lonely
+Current artist: NANA
+Start time: 2026 Mar 08 Sun 11:26:26
+Location: audiosamples/NANA_Lonely_sample.acc
+
+Current song: Lonely
+Current artist: NANA
+Start time: 2026 Mar 08 Sun 11:26:31
+Location: audiosamples/NANA_Lonely_sample.acc
+
+Current song: Lonely
+Current artist: NANA
+Start time: 2026 Mar 08 Sun 11:26:37
+Location: audiosamples/NANA_Lonely_sample.acc
+
+Current song: Lonely
+Current artist: NANA
+Start time: 2026 Mar 08 Sun 11:26:41
+Location: audiosamples/NANA_Lonely_sample.acc
+
+Current song: Lonely
+Current artist: NANA
+Start time: 2026 Mar 08 Sun 11:26:41
+Location: audiosamples/NANA_Lonely_sample.acc
+
+Current song: Loosen Up
+Current artist: HUGEL, DAWTY FT. PRESTON HARRIS
+Start time: 2026 Mar 08 Sun 11:27:21
+Location: audiosamples/HUGEL, DAWTY FT. PRESTON HARRIS_Loosen Up_sample.acc
+
+Current song: Ti Amo
+Current artist: GINA G
+Start time: 2026 Mar 08 Sun 11:30:35
+Location: audiosamples/GINA G_Ti Amo_sample.acc
+
+Current song: Ti Amo
+Current artist: GINA G
+Start time: 2026 Mar 08 Sun 11:31:14
+Location: audiosamples/GINA G_Ti Amo_sample.acc
+
+Current song: Ti Amo
+Current artist: GINA G
+Start time: 2026 Mar 08 Sun 11:31:14
+Location: audiosamples/GINA G_Ti Amo_sample.acc
+
+Current song: Location
+Current artist: ZERB & WIZ KHALIFA FT. TY DOLLA $IGN
+Start time: 2026 Mar 08 Sun 11:33:14
+Location: audiosamples/ZERB & WIZ KHALIFA FT. TY DOLLA $IGN_Location_sample.acc
+
+Current song: Return Of The Mack
+Current artist: MARK MORRISON
+Start time: 2026 Mar 08 Sun 11:35:35
+Location: audiosamples/MARK MORRISON_Return Of The Mack_sample.acc
+
+Current song: Beautiful Things (DJ Dark Rmx)
+Current artist: BENSON BOONE
+Start time: 2026 Mar 08 Sun 11:38:56
+Location: audiosamples/BENSON BOONE_Beautiful Things (DJ Dark Rmx)_sample.acc
+
+Current song: Pump It
+Current artist: THE BLACK EYED PEAS
+Start time: 2026 Mar 08 Sun 11:42:16
+Location: audiosamples/THE BLACK EYED PEAS_Pump It_sample.acc
+
+Current song: Sweet Dreams
+Current artist: LA BOUCHE
+Start time: 2026 Mar 08 Sun 11:46:13
+Location: audiosamples/LA BOUCHE_Sweet Dreams_sample.acc
+
+Current song: Sweet Dreams
+Current artist: LA BOUCHE
+Start time: 2026 Mar 08 Sun 11:47:45
+Location: audiosamples/LA BOUCHE_Sweet Dreams_sample.acc
+
+Current song: Sweet Dreams
+Current artist: LA BOUCHE
+Start time: 2026 Mar 08 Sun 11:47:53
+Location: audiosamples/LA BOUCHE_Sweet Dreams_sample.acc
+
+Current song: Sweet Dreams
+Current artist: LA BOUCHE
+Start time: 2026 Mar 08 Sun 11:47:53
+Location: audiosamples/LA BOUCHE_Sweet Dreams_sample.acc
+
+Current song: Where Is My Husband
+Current artist: RAYE
+Start time: 2026 Mar 08 Sun 11:51:52
+Location: audiosamples/RAYE_Where Is My Husband_sample.acc
+
+Current song: Where Is My Husband
+Current artist: RAYE
+Start time: 2026 Mar 08 Sun 11:51:58
+Location: audiosamples/RAYE_Where Is My Husband_sample.acc
+
+Current song: Where Is My Husband
+Current artist: RAYE
+Start time: 2026 Mar 08 Sun 11:52:16
+Location: audiosamples/RAYE_Where Is My Husband_sample.acc
+
+Current song: Where Is My Husband
+Current artist: RAYE
+Start time: 2026 Mar 08 Sun 11:52:16
+Location: audiosamples/RAYE_Where Is My Husband_sample.acc
+
+Current song: What's Going On (In Your Mind)
+Current artist: BEAT SYSTEM
+Start time: 2026 Mar 08 Sun 11:53:31
+Location: audiosamples/BEAT SYSTEM_What's Going On (In Your Mind)_sample.acc
+
+Current song: What's Going On (In Your Mind)
+Current artist: BEAT SYSTEM
+Start time: 2026 Mar 08 Sun 11:53:39
+Location: audiosamples/BEAT SYSTEM_What's Going On (In Your Mind)_sample.acc
+
+Current song: What's Going On (In Your Mind)
+Current artist: BEAT SYSTEM
+Start time: 2026 Mar 08 Sun 11:54:18
+Location: audiosamples/BEAT SYSTEM_What's Going On (In Your Mind)_sample.acc
+
+Current song: What's Going On (In Your Mind)
+Current artist: BEAT SYSTEM
+Start time: 2026 Mar 08 Sun 11:54:34
+Location: audiosamples/BEAT SYSTEM_What's Going On (In Your Mind)_sample.acc
+
+Current song: What's Going On (In Your Mind)
+Current artist: BEAT SYSTEM
+Start time: 2026 Mar 08 Sun 11:55:18
+Location: audiosamples/BEAT SYSTEM_What's Going On (In Your Mind)_sample.acc
+
+Current song: What's Going On (In Your Mind)
+Current artist: BEAT SYSTEM
+Start time: 2026 Mar 08 Sun 11:55:36
+Location: audiosamples/BEAT SYSTEM_What's Going On (In Your Mind)_sample.acc
+
+Current song: What's Going On (In Your Mind)
+Current artist: BEAT SYSTEM
+Start time: 2026 Mar 08 Sun 11:56:09
+Location: audiosamples/BEAT SYSTEM_What's Going On (In Your Mind)_sample.acc
+
+Current song: What's Going On (In Your Mind)
+Current artist: BEAT SYSTEM
+Start time: 2026 Mar 08 Sun 11:56:09
+Location: audiosamples/BEAT SYSTEM_What's Going On (In Your Mind)_sample.acc
+
+Current song: Ride It
+Current artist: REGARD
+Start time: 2026 Mar 08 Sun 11:57:05
+Location: audiosamples/REGARD_Ride It_sample.acc
+
+Current song: Ride It
+Current artist: REGARD
+Start time: 2026 Mar 08 Sun 11:57:50
+Location: audiosamples/REGARD_Ride It_sample.acc
+
+Current song: Ride It
+Current artist: REGARD
+Start time: 2026 Mar 08 Sun 11:58:08
+Location: audiosamples/REGARD_Ride It_sample.acc
+
+Current song: Ride It
+Current artist: REGARD
+Start time: 2026 Mar 08 Sun 11:58:46
+Location: audiosamples/REGARD_Ride It_sample.acc
+
+Current song: Ride It
+Current artist: REGARD
+Start time: 2026 Mar 08 Sun 11:58:52
+Location: audiosamples/REGARD_Ride It_sample.acc
+
+Current song: Ride It
+Current artist: REGARD
+Start time: 2026 Mar 08 Sun 11:59:16
+Location: audiosamples/REGARD_Ride It_sample.acc
+
+Current song: Ride It
+Current artist: REGARD
+Start time: 2026 Mar 08 Sun 11:59:16
+Location: audiosamples/REGARD_Ride It_sample.acc
+
+Current song: You
+Current artist: LA CREAM
+Start time: 2026 Mar 08 Sun 12:02:35
+Location: audiosamples/LA CREAM_You_sample.acc
+
+Current song: You
+Current artist: LA CREAM
+Start time: 2026 Mar 08 Sun 12:02:35
+Location: audiosamples/LA CREAM_You_sample.acc
+
+Current song: ENERGY OFFICIAL ANTHEM 2025
+Current artist: D-N-K
+Start time: 2026 Mar 08 Sun 12:03:39
+Location: audiosamples/D-N-K_ENERGY OFFICIAL ANTHEM 2025_sample.acc
+
+Current song: ENERGY OFFICIAL ANTHEM 2025
+Current artist: D-N-K
+Start time: 2026 Mar 08 Sun 12:03:59
+Location: audiosamples/D-N-K_ENERGY OFFICIAL ANTHEM 2025_sample.acc
+
+Current song: ENERGY OFFICIAL ANTHEM 2025
+Current artist: D-N-K
+Start time: 2026 Mar 08 Sun 12:04:22
+Location: audiosamples/D-N-K_ENERGY OFFICIAL ANTHEM 2025_sample.acc
+
+Current song: ENERGY OFFICIAL ANTHEM 2025
+Current artist: D-N-K
+Start time: 2026 Mar 08 Sun 12:04:40
+Location: audiosamples/D-N-K_ENERGY OFFICIAL ANTHEM 2025_sample.acc
+
+Current song: ENERGY OFFICIAL ANTHEM 2025
+Current artist: D-N-K
+Start time: 2026 Mar 08 Sun 12:04:40
+Location: audiosamples/D-N-K_ENERGY OFFICIAL ANTHEM 2025_sample.acc
+
+Current song: Gettin' Jiggy Wit It
+Current artist: WILL SMITH
+Start time: 2026 Mar 08 Sun 12:07:16
+Location: audiosamples/WILL SMITH_Gettin' Jiggy Wit It_sample.acc
+
+Current song: They Don't Care About Us
+Current artist: MICHAEL JACKSON
+Start time: 2026 Mar 08 Sun 17:09:27
+Location: audiosamples/MICHAEL JACKSON_They Don't Care About Us_sample.acc
+
+Current song: They Don't Care About Us
+Current artist: MICHAEL JACKSON
+Start time: 2026 Mar 08 Sun 17:09:42
+Location: audiosamples/MICHAEL JACKSON_They Don't Care About Us_sample.acc
+
+Current song: They Don't Care About Us
+Current artist: MICHAEL JACKSON
+Start time: 2026 Mar 08 Sun 17:09:42
+Location: audiosamples/MICHAEL JACKSON_They Don't Care About Us_sample.acc
+
+Current song: Ordinary (ENERGY Rmx)
+Current artist: ALEX WARREN
+Start time: 2026 Mar 08 Sun 17:10:42
+Location: audiosamples/ALEX WARREN_Ordinary (ENERGY Rmx)_sample.acc
+
+Current song: Thunder
+Current artist: EAST 17
+Start time: 2026 Mar 08 Sun 17:17:44
+Location: audiosamples/EAST 17_Thunder_sample.acc
+
+Current song: Me And You
+Current artist: ALEXIA FT. DOUBLE YOU
+Start time: 2026 Mar 08 Sun 17:21:46
+Location: audiosamples/ALEXIA FT. DOUBLE YOU_Me And You_sample.acc
+
+Current song: Paradise
+Current artist: DJ SNAKE FT. BIPOLAR SUNSHINE
+Start time: 2026 Mar 08 Sun 17:25:33
+Location: audiosamples/DJ SNAKE FT. BIPOLAR SUNSHINE_Paradise_sample.acc
+
+Current song: Freestyler
+Current artist: BOMFUNK MC'S
+Start time: 2026 Mar 08 Sun 17:27:53
+Location: audiosamples/BOMFUNK MC'S_Freestyler_sample.acc
+
+Current song: Sapphire
+Current artist: ED SHEERAN
+Start time: 2026 Mar 08 Sun 17:31:39
+Location: audiosamples/ED SHEERAN_Sapphire_sample.acc
+
+Current song: Tango In Harlem
+Current artist: TOUCH AND GO
+Start time: 2026 Mar 08 Sun 17:34:20
+Location: audiosamples/TOUCH AND GO_Tango In Harlem_sample.acc
+
+Current song: Zhurek (Isko Alvarez Remix)
+Current artist: ADAM
+Start time: 2026 Mar 08 Sun 17:37:40
+Location: audiosamples/ADAM_Zhurek (Isko Alvarez Remix)_sample.acc
+
+Current song: I Like (The Trumpet)
+Current artist: DJ SAVA FT. RALUKA & CONNECT-R
+Start time: 2026 Mar 08 Sun 17:40:41
+Location: audiosamples/DJ SAVA FT. RALUKA & CONNECT-R_I Like (The Trumpet)_sample.acc
+
+Current song: So Strung Out
+Current artist: C-BLOCK
+Start time: 2026 Mar 08 Sun 17:44:21
+Location: audiosamples/C-BLOCK_So Strung Out_sample.acc
+
+Current song: ENERGY OFFICIAL ANTHEM 2025
+Current artist: D-N-K
+Start time: 2026 Mar 08 Sun 17:50:10
+Location: audiosamples/D-N-K_ENERGY OFFICIAL ANTHEM 2025_sample.acc
+
+Current song: I Got Five On It
+Current artist: DA LUNIZ
+Start time: 2026 Mar 08 Sun 17:50:51
+Location: audiosamples/DA LUNIZ_I Got Five On It_sample.acc
+
+Current song: I Got Five On It
+Current artist: DA LUNIZ
+Start time: 2026 Mar 08 Sun 17:51:47
+Location: audiosamples/DA LUNIZ_I Got Five On It_sample.acc
+
+Current song: I Got Five On It
+Current artist: DA LUNIZ
+Start time: 2026 Mar 08 Sun 17:51:56
+Location: audiosamples/DA LUNIZ_I Got Five On It_sample.acc
+
+Current song: I Got Five On It
+Current artist: DA LUNIZ
+Start time: 2026 Mar 08 Sun 17:52:56
+Location: audiosamples/DA LUNIZ_I Got Five On It_sample.acc
+
+Current song: I Got Five On It
+Current artist: DA LUNIZ
+Start time: 2026 Mar 08 Sun 17:53:26
+Location: audiosamples/DA LUNIZ_I Got Five On It_sample.acc
+
+Current song: I Never Felt So Right
+Current artist: BEN DELAY
+Start time: 2026 Mar 08 Sun 17:53:43
+Location: audiosamples/BEN DELAY_I Never Felt So Right_sample.acc
+
