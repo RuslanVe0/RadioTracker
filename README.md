@@ -36,4 +36,5 @@ python main.py -m -s=radioenergy
 - Important libraries which must be installed:
 - python-vlc, mutagen.
 - Also it is recommended and required to install ffmpeg. You can download it from here - https://github.com/BtbN/FFmpeg-Builds/releases.
-They can be found in requirements.txt
+- It is also required to install VLC Player at - https://get.videolan.org/vlc/3.0.23/win64/vlc-3.0.23-win64.exe 
+Other Python requirements can be found in requirements.txt
